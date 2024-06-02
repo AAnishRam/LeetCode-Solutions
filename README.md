@@ -21,3 +21,6 @@ How to Use:
     
 Contributions:
 I welcome contributions! If you have a different or improved solution to a problem, feel free to open a pull request. Please ensure your code is well-documented and follows the repository's structure.
+
+
+![Leetcode Stats](https://leetcard.jacoblin.cool/A_Anish_Ram?theme=light)
