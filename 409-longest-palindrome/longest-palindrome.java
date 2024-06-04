@@ -17,7 +17,7 @@ class Solution {
                 hasOne = true;
             }
             
-                count += val.getValue()-(val.getValue()%2);
+            count += val.getValue()-(val.getValue()%2);
             
         }
 
