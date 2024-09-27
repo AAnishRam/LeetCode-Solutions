@@ -23,7 +23,6 @@ class Solution {
                 arr[k] = arr[j];
                 arr[j] = temp;
                 k--;
-
             }
         }
 
