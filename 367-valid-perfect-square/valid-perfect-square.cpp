@@ -10,12 +10,12 @@ public:
 
         while(low<=high)
         {
-            long mid = (low+high)/2;
+            mid = (low+high)/2;
 
             if(mid == num/mid && num%mid == 0)
                 return true;
 
-            if(mid*mid <num)
+            if(mid <num/mid)
                 low = mid+1;
             else
                 high = mid-1;
