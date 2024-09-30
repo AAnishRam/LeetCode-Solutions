@@ -10,7 +10,7 @@ public:
 
         while(low<=high)
         {
-            mid = (low+high)/2;
+            mid = low + (high-low)/2;
 
             if(mid == num/mid && num%mid == 0)
                 return true;
