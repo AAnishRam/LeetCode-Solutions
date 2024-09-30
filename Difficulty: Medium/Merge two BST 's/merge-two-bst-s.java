@@ -108,33 +108,18 @@ class Node
 
 */
 class Solution {
-    // Function to return a list of integers denoting the node
-    // values of both the BST in a sorted order.
-    
-    
-    public void inorder(Node root, List<Integer> l)
-    {
-        if (root == null) return;
-        inorder(root.left, l);
-        l.add(root.data);
-        inorder(root.right, l);
-    }
     public List<Integer> merge(Node root1, Node root2) {
-        
-        List<Integer> l1 = new ArrayList();
-        inorder(root1,l1);
-        List<Integer> l2 = new ArrayList();
-        inorder(root2,l2);
-        
-        List<Integer>ans = new ArrayList();
-        
-        for(var i:l1)
-            ans.add(i);
-        for(var i:l2)
-            ans.add(i);
-        
-        Collections.sort(ans);
-        
-        return ans;
+        List<Integer> sortedList = new ArrayList<>();
+        inOrderTraversal(root1, sortedList);
+        inOrderTraversal(root2, sortedList);
+        sortedList.sort(Integer::compareTo);
+        return sortedList;
+    }
+    
+    private void inOrderTraversal(Node root, List<Integer> sortedList) {
+        if (root == null) return;
+        inOrderTraversal(root.left, sortedList);
+        sortedList.add(root.data);
+        inOrderTraversal(root.right, sortedList);
     }
 }
