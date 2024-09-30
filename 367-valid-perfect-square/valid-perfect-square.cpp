@@ -12,7 +12,7 @@ public:
         {
             long mid = (low+high)/2;
 
-            if(mid*mid == num)
+            if(mid == num/mid && num%mid == 0)
                 return true;
 
             if(mid*mid <num)
