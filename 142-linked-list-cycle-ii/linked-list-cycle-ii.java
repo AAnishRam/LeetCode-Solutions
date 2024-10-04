@@ -20,12 +20,10 @@ public class Solution {
 
         while(temp.next!=null)
         {
-
             if(hm.get(temp)!=null)
             {
                 return temp;
             }
-        
             hm.put(temp,0);
             temp = temp.next;
 
