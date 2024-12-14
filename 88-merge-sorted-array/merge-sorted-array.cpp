@@ -8,7 +8,7 @@ public:
 
         while(a>=0 && b>=0)
         {
-            if(nums1[a]<=nums2[b])
+            if(nums1[a]<nums2[b])
             {
                 nums1[c--] = nums2[b--];
             }
