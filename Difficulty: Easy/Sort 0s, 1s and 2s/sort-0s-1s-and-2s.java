@@ -29,34 +29,17 @@ class GFG {
 
 
 // } Driver Code Ends
+
 class Solution {
     // Function to sort an array of 0s, 1s, and 2s
-    public void sort012(int[] arr ) {
+    public void sort012(int[] arr) {
         // code here
-       int beg = 0;
-       int end = arr.length-1;
-       int i = 0;
-       while( i <= end) {
-           if(arr[i] == 0) {
-               swap(arr,i,beg);
-               beg++;
-               i++;
-           } 
-           else if (arr[i] ==2) {
-               swap(arr, i, end);
-               end--;
-           } else {
-               i++;
-           }
-       }
+        Arrays.sort(arr);
+        
+        //return arr;
     }
-    static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
-
 }
+
 
 //{ Driver Code Starts.
 // } Driver Code Ends
