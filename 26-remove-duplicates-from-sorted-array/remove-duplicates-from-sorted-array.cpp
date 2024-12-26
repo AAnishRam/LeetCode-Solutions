@@ -7,16 +7,28 @@ public:
             return n;
         int i = 0;
         int j = 0;
-        while(j<n)
+
+        for(int j = 1;j<n;j++)
         {
-            while(j<n && nums[i]==nums[j])
+            if(nums[i]!=nums[j])
             {
-                j++;
+                nums[i+1] = nums[j];
+                i++;
             }
-            if(i+1<n && j<n)
-            nums[i+1] = nums[j];
-            i++;
         }
-        return i;
+        return i+1;
+
+        //my solution 
+        // while(j<n)
+        // {
+        //     while(j<n && nums[i]==nums[j])
+        //     {
+        //         j++;
+        //     }
+        //     if(i+1<n && j<n)
+        //     nums[i+1] = nums[j];
+        //     i++;
+        // }
+        // return i;
     }
 };
