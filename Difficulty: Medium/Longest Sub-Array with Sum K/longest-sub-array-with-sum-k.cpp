@@ -4,6 +4,7 @@ using namespace std;
 
 
 // } Driver Code Ends
+
 class Solution {
   public:
     int lenOfLongestSubarr(vector<int>& arr, int k) {
@@ -39,6 +40,7 @@ class Solution {
         return maxLen;
     }
 };
+
 
 //{ Driver Code Starts.
 
