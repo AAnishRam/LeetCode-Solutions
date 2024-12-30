@@ -38,7 +38,7 @@ public:
         if(nums[nums.size()-1]>nums[0])count++;
 
         cout<<count;
-        return count==1 || count==0;
+        return count<=1;
 
     }
 };
