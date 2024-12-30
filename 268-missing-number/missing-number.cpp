@@ -26,14 +26,25 @@ public:
         // return ans-sum;
 
 
-        int xor1 = 0;
-        int xor2 = 0;
+        // int xor1 = 0;
+        // int xor2 = 0;
 
-        for(int i=0;i<nums.size();i++)
+        // for(int i=0;i<nums.size();i++)
+        // {
+        //     xor1^=(i+1);
+        //     xor2^=nums[i];
+        // }
+        // return xor1^xor2;
+
+        int n = nums.size();
+
+        int sum = 0;
+        for(int i=0;i<n;i++)
         {
-            xor1^=(i+1);
-            xor2^=nums[i];
+            sum+=nums[i];
         }
-        return xor1^xor2;
+        int temp = (n*(n+1))/2;
+
+        return temp-sum;
     }
 };
