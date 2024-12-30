@@ -2,7 +2,6 @@ class Solution {
 public:
     int majorityElement(vector<int>& nums) {
 
-
         //this is moores voting algorithm
 
         int count = 0;
@@ -13,7 +12,7 @@ public:
             if(count == 0)
             {
                 ele = nums[i];
-                count = 1;
+                count++;
             }
             else if(nums[i] == ele)
             {
