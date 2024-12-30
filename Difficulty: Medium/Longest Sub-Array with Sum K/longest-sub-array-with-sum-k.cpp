@@ -17,6 +17,10 @@ class Solution {
         for(int i=0;i<arr.size();i++)
         {
             sum+=arr[i];
+            if(hm.find(sum) == hm.end())
+            {
+                hm[sum] = i;
+            }
             
             if(sum == k)
             {
@@ -31,10 +35,7 @@ class Solution {
                 maxLen = max(maxLen, len);
             }
             
-            if(hm.find(sum) == hm.end())
-            {
-                hm[sum] = i;
-            }
+            
         }
         
         return maxLen;
