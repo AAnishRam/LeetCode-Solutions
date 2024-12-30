@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool check(vector<int>& nums) {
+        //my approach
         // int i = 1;
         // int n = nums.size();
         // int temp = nums[0];
@@ -36,7 +37,8 @@ public:
         }
         if(nums[nums.size()-1]>nums[0])count++;
 
-        return count<=1;
+        cout<<count;
+        return count==1 || count==0;
 
     }
 };
