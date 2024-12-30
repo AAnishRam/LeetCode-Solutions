@@ -13,6 +13,7 @@ public:
             {
                 ele = nums[i];
             }
+            
             if(nums[i] == ele)
             {
                 count++;
