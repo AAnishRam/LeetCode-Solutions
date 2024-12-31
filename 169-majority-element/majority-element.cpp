@@ -11,9 +11,10 @@ public:
         {
             if(count == 0)
             {
+                count = 1;
                 ele = nums[i];
             }
-            if(nums[i] == ele)
+            else if(nums[i] == ele)
             {
                 count++;
             }
