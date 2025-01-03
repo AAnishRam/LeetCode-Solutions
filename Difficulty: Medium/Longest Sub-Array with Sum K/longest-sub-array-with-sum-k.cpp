@@ -8,37 +8,28 @@ using namespace std;
 class Solution {
   public:
     int lenOfLongestSubarr(vector<int>& arr, int k) {
-        map<int,int> hm;
-        
-        
-        int maxLen = 0;
+        map<int, int> hm;
         int sum = 0;
+        int maxi = 0;
         
         for(int i=0;i<arr.size();i++)
         {
             sum+=arr[i];
-            if(hm.find(sum) == hm.end())
-            {
+            if(sum==k)
+                maxi = max(maxi, i+1);
+                
+            if(hm.find(sum)==hm.end())
                 hm[sum] = i;
-            }
+                
+            int rem = sum-k;
             
-            if(sum == k)
+            if(hm.find(rem)!=hm.end())
             {
-                maxLen = max(maxLen, i+1);
+                maxi = max(maxi,i-hm[rem]);
             }
-            
-            int rem = sum - k;
-            
-            if(hm.find(rem) != hm.end())
-            {
-                int len = i - hm[rem];
-                maxLen = max(maxLen, len);
-            }
-            
-            
         }
         
-        return maxLen;
+        return maxi;
     }
 };
 
