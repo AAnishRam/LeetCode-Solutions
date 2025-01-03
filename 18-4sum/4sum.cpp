@@ -10,6 +10,7 @@ public:
             if(i>0 && nums[i]==nums[i-1])continue; 
             for(int j=i+1;j<n;j++)
             {
+                if(j>i+1 && nums[j]==nums[j-1])continue;
                 int k = j+1;
                 int l = n-1;
 
@@ -37,9 +38,9 @@ public:
                         while(k<l && nums[l]==nums[l+1])l--;
                     }
                 }
-                j++;
-                while(j<n && nums[j]==nums[j-1])j++;
-                j--;
+                // j++;
+                // while(j<n && nums[j]==nums[j-1])j++;
+                // j--;
             }
         }
         return ans;
