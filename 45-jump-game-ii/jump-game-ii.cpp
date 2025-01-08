@@ -5,20 +5,25 @@ public:
         if (n == 1) 
             return 0;
 
-        int jumps = 0;
-        int currentReach = 0;
-        int maxReach = 0;
+        int maxJump = 0;
+        int currJump = 0;
 
-        for (int i = 0; i < n - 1; i++) {
-            maxReach = max(maxReach, i + nums[i]);
-            if (i == currentReach) {
-                jumps++;
-                currentReach = maxReach;
-                if (currentReach >= n - 1)
-                    break;
+        int jump = 0;
+
+        for(int i=0;i<n;i++)
+        {
+            maxJump = max(maxJump, i + nums[i]);
+
+            if(currJump == i)
+            {
+                currJump = maxJump;
+                jump++;
             }
+
+            if(currJump>=n-1)
+                break;
         }
 
-        return jumps;
+        return jump;
     }
 };
