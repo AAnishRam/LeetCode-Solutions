@@ -23,9 +23,6 @@ public:
                 }
             }
 
-            if(i==index)
-            return false;
-
             i = index;
         }
        
