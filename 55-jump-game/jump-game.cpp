@@ -5,11 +5,8 @@ public:
 
         int n = nums.size();
 
-        while(i<n)
+        while(i<n-1)
         {
-            if(i>=n-1)
-                return true;
-
             if(nums[i]==0)
                 return false;
 
