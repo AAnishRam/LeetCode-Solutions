@@ -24,6 +24,5 @@ public:
 
         return isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
 
-        
     }
 };
