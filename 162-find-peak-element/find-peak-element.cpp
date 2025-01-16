@@ -19,10 +19,16 @@ public:
             if(nums[mid]>nums[mid+1] && nums[mid]>nums[mid-1])
                 return mid;
             
-            if(nums[mid-1]>nums[mid])
-                high = mid-1;
-            else
+            if(nums[mid+1]>nums[mid])
                 low = mid+1;
+            else
+                high = mid-1;
+            
+            // both will work
+            // if(nums[mid-1]>nums[mid])
+            //     high = mid-1;
+            // else
+            //     low = mid+1;
 
         }
 
