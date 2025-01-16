@@ -20,7 +20,9 @@ class Solution {
             
             if(mid * mid <= n)
             {
+                //ans = max(ans, mid);
                 ans = mid;
+                
                 low = mid + 1;
             }
             else
@@ -29,7 +31,7 @@ class Solution {
             }
         }
         
-        return ans;
+        return high;
     }
 };
 
