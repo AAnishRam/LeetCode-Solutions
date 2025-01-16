@@ -11,6 +11,9 @@ class Solution {
     {
         long long ans = 1;
         
+        
+        // here in for loob in this function itself we can add a parameter if
+        // its crossed the mid value break the for loop or return some thing
         for(int i=0;i<n;i++)
             ans*=x;
             
