@@ -12,6 +12,9 @@ public:
 
             if(rem != 0)
                 count++;
+            
+            if(count > h)
+                return false;
         }
 
         return count <= h;
