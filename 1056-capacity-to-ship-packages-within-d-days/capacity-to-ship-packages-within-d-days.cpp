@@ -9,12 +9,7 @@ public:
         {
             if(it > cap)
                 return false;
-            if(sum + it == cap)
-            {
-                reqDays++;
-                sum = 0;
-            }
-            else if(sum + it > cap) 
+            if(sum + it > cap) 
             {
                 reqDays++;
                 sum = it;
@@ -25,9 +20,10 @@ public:
             }
         }
 
-        if(sum !=0)
+        if(sum !=0 )
             reqDays++;
-        cout<<cap<<" "<<reqDays<<endl;
+
+        // cout<<cap<<" "<<reqDays<<endl;
 
         return reqDays <= days;
     }
