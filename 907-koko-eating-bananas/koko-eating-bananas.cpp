@@ -7,7 +7,7 @@ public:
 
         for(int i=0;i<piles.size();i++)
         {
-            count += piles[i] / k;
+            count += ceil( piles[i] / k );
             long long rem = piles[i] % k;
 
             if(rem != 0)
@@ -19,10 +19,10 @@ public:
 
     int minEatingSpeed(vector<int>& piles, int h) {
 
-        sort(piles.begin(), piles.end());
+        // sort(piles.begin(), piles.end());
         
         int low = 1;
-        int high = piles.back();
+        int high = INT_MAX/2;
 
         int ans = INT_MAX;
 
