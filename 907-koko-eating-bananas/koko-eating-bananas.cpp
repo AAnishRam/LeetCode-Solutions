@@ -7,14 +7,16 @@ public:
 
         for(int i=0;i<piles.size();i++)
         {
-            count += piles[i] / k;
-            long long rem = piles[i] % k;
-
-            if(rem != 0)
-                count++;
+            count += ceil((double)piles[i] / (double)k);
             
-            if(count > h)
-                return false;
+            // if we not use ceil function we can use this
+            // long long rem = piles[i] % k;
+
+            // if(rem != 0)
+            //     count++;
+            
+            // if(count > h)
+            //     return false;
         }
 
         return count <= h;
