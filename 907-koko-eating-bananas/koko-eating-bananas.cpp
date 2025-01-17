@@ -7,7 +7,7 @@ public:
 
         for(int i=0;i<piles.size();i++)
         {
-            count += ceil( piles[i] / k );
+            count += piles[i] / k;
             long long rem = piles[i] % k;
 
             if(rem != 0)
