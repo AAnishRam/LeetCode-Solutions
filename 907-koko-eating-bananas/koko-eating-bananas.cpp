@@ -19,10 +19,12 @@ public:
 
     int minEatingSpeed(vector<int>& piles, int h) {
 
-        // sort(piles.begin(), piles.end());
         
         int low = 1;
-        int high = INT_MAX/2;
+        int high = INT_MIN;
+
+        for(auto it : piles)
+            high = max(high, it);
 
         int ans = INT_MAX;
 
