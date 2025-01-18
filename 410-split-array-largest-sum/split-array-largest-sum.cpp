@@ -1,23 +1,23 @@
 class Solution {
 public:
 
-    int canAllocate(vector<int>& arr,int pages) {
-        int stu = 1;
+    int canAllocate(vector<int>& arr,int maxSum) {
+        int split = 1;
         
         long long sum = 0;
         
         for(int i=0;i<arr.size();i++)
         {
-            if(sum + arr[i] <= pages)
+            if(sum + arr[i] <= maxSum)
                 sum += arr[i];
             else
             {
                 sum = arr[i];
-                stu++;
+                split++;
             }
         }
         
-        return stu;
+        return split;
     }
 
     int splitArray(vector<int>& arr, int k) {
