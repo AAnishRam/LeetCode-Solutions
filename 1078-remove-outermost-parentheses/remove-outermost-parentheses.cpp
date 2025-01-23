@@ -48,17 +48,19 @@ public:
         {
             if(s[i] == '(')
             {
-                if(count > 0)
+                count++;
+
+                if(count > 1)
                     ans += s[i];
 
-                count++;
             }
             else
             {
-                if(count > 1)
-                    ans += s[i];
-                    
                 count--;
+
+                if(count > 0)
+                    ans += s[i];
+
             }
         }
 
