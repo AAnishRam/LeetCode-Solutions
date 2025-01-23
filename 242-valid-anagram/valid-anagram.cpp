@@ -1,22 +1,21 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        map<char, int> hm1;
-        map<char, int> hm2;
+        map<char, int> hm;
+        
 
         if(s.length() !=  t.length())
             return false;
         
         for(int i = 0; i<s.length();i++)
         {
-            hm1[s[i]]++;
-            hm2[t[i]]++;
+            hm[s[i]]++;
+            hm[t[i]]--;
         }
 
-        
-        for(int i = 0; i<s.length();i++)
+        for(auto it : hm)
         {
-            if(hm1[s[i]] != hm2[s[i]])
+            if(it.second != 0)
                 return false;
         }
         return true;
