@@ -36,5 +36,16 @@ public:
         }
 
         return ans*sign;
+
+
+        // how did i checked over flow
+
+        // everytime       ans * 10 + digit <= INT_MAX;
+        // on rearranging  ans * 10         <= (INT_MAX - digit) / 10;
+        //                 ans              <= (INT_MAX - digit) / 10;
+
+        // therefore if    ans              >  (INT_MAX - digit) / 10;
+        // we need to return INT_MAX;
+
     }
 };
