@@ -15,6 +15,6 @@ public:
                 return num.substr(0, j+1);
             j--;
         }
-        return num.substr(0, j+1);
+        return "";
     }
 };
