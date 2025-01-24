@@ -30,5 +30,18 @@ public:
 
         return false;
 
+
+        // First, check if lengths are equal (if not, rotation is impossible)
+        // Create a concatenated string s + s which contains all possible rotations
+        // Check if goal is a substring of s + s
+        // s = "abcde", goal = "cdeab"
+        // s + s = "abcdeabcde"
+        // "cdeab" is present in "abcdeabcde", so return True
+
+        // if (s.length() != goal.length()) {
+        //     return false;
+        // }
+        // return (s + s).find(goal) != string::npos;
+
     }
 };
