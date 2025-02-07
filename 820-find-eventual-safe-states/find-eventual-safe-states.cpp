@@ -31,26 +31,76 @@ public:
     }
 
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
+        // int n = graph.size();
+        // vector<int> visited(n, 0);
+        // vector<int> pathVisited(n, 0);
+        // vector<int> isSafeNode(n, 0);
+
+        // for(int i = 0; i < n; i++)
+        // {
+        //     if(!visited[i])
+        //         dfs(i, graph, visited, pathVisited, isSafeNode);
+        // }
+
+        // vector<int> ans;
+
+        // for(int i = 0; i < n; i++)
+        // {
+        //     if(isSafeNode[i])
+        //         ans.push_back(i);
+        // }
+
+        // return ans;
+
+
+        // we can also use topo sort here
+
         int n = graph.size();
-        vector<int> visited(n, 0);
-        vector<int> pathVisited(n, 0);
-        vector<int> isSafeNode(n, 0);
+        vector<vector<int>> graphRev(n);
+
+        for(int node = 0; node < n; node++)
+        {
+            for(auto adjNode : graph[node])
+            {
+                graphRev[adjNode].push_back(node);
+            }
+        }
+
+        vector<int> inDegree(n, 0);
+        queue<int> q;
+        vector<int> topoSort;
+
+        for(int node = 0; node < n; node++)
+        {
+            for(auto adjNode : graphRev[node])
+            {
+                inDegree[adjNode]++;
+            }
+        }
 
         for(int i = 0; i < n; i++)
         {
-            if(!visited[i])
-                dfs(i, graph, visited, pathVisited, isSafeNode);
+            if(inDegree[i] == 0)
+                q.push(i);
         }
 
-        vector<int> ans;
-
-        for(int i = 0; i < n; i++)
+        while(!q.empty())
         {
-            if(isSafeNode[i])
-                ans.push_back(i);
+            int node = q.front();
+            q.pop();
+            topoSort.push_back(node);
+
+            for(auto adjNode : graphRev[node])
+            {
+                inDegree[adjNode]--;
+                if(inDegree[adjNode] == 0)
+                    q.push(adjNode);
+            }
         }
 
-        return ans;
+        sort(topoSort.begin(), topoSort.end());
+
+        return topoSort;
 
     }
 };
