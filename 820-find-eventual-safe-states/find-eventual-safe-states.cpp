@@ -22,6 +22,7 @@ public:
             }
         }
 
+        //if there is no cycle formed from that path then its a safe node
         isSafeNode[node] = 1;
         pathVisited[node] = 0;
         return false;
