@@ -6,7 +6,6 @@ public:
     {
         visited[node] = 1;
         pathVisited[node] = 1;
-        isSafeNode[node] = 0;
 
         for(auto adjNode : graph[node])
         {
@@ -54,6 +53,8 @@ public:
 
 
         // we can also use topo sort here
+        // first reverese the edges 
+        // then perform topo sort
 
         int n = graph.size();
         vector<vector<int>> graphRev(n);
