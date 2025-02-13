@@ -26,7 +26,8 @@ public:
             
             if(r == n-1 && c == n-1)
             {
-                return dist + 1;
+                ans = min(ans, dist);
+                break;
             }
 
             for(int i=0;i<8;i++)
@@ -46,8 +47,9 @@ public:
 
         }
 
+        if(ans == INT_MAX)
             return -1;
 
-        // return ans + 1;
+        return ans + 1;
     }
 };
