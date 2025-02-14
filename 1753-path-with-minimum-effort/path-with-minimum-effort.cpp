@@ -5,8 +5,9 @@ public:
         int m = heights[0].size();
 
         vector<vector<int>>distance(n, vector<int>(m, INT_MAX));
-        queue<pair<int, int>>q;
-        q.push({0, 0});
+        priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, greater<pair<int, pair<int, int>>>> q;
+
+        q.push({0, {0, 0}});
         distance[0][0] = 0;
 
         int dr[4] = {-1, 0, 1, 0};
@@ -14,8 +15,8 @@ public:
 
         while(!q.empty())
         {
-            int r = q.front().first;
-            int c = q.front().second;
+            int r = q.top().second.first;
+            int c = q.top().second.second;
             q.pop();
 
             for(int i=0;i<4;i++)
@@ -29,7 +30,7 @@ public:
                     int maxEffort = max(distance[r][c], newWeight);
                     if (maxEffort < distance[newRow][newCol]) {
                         distance[newRow][newCol] = maxEffort;
-                        q.push({newRow, newCol});
+                        q.push({maxEffort, {newRow, newCol}});
                     }
 
                 }
