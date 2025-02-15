@@ -19,6 +19,9 @@ public:
             int c = q.top().second.second;
             q.pop();
 
+            if(r == n-1 && c == m-1)
+                return distance[r][c];
+
             for(int i=0;i<4;i++)
             {
                 int newRow = r + dr[i];
@@ -40,7 +43,7 @@ public:
 
         }
 
-        return distance[n-1][m-1];
+        return 0;
 
     }
 };
