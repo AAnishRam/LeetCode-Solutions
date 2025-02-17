@@ -56,8 +56,11 @@ public:
             {
                 if(visited.find(adjNode) == visited.end())
                 {
-                    q.push({adjNode, step+1});
-                    visited[adjNode] = 1;
+                    if(step + 1 <= k)
+                    {
+                        q.push({adjNode, step+1});
+                        visited[adjNode] = 1;
+                    }
                 }
             }
         }
