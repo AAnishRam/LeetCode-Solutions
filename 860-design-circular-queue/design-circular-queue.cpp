@@ -13,7 +13,7 @@ public:
     }
     
     bool enQueue(int value) {
-         if (isFull()) 
+        if (isFull()) 
             return false;
         
         if (isEmpty()) 
