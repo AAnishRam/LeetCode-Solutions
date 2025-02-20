@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    // see submission i where i used a seperate sum variable insted of doing it in target 
+    // see submission where i used a seperate sum variable insted of doing it in target 
 
     void findCombinations(int i, vector<int>& candidates, int target, 
                           vector<vector<int>>& ans, vector<int>& temp) {
