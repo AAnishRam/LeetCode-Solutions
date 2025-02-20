@@ -1,12 +1,12 @@
 class Solution {
 public:
 
-    void findCombination(int i, set<vector<int>> &ans, vector<int> &temp, 
+    void findCombination(int i, vector<vector<int>> &ans, vector<int> &temp, 
     vector<int>& candidates, int target)
     {
         if(target == 0)
         {
-            ans.insert(temp);
+            ans.push_back(temp);
             return;
         }
 
@@ -25,15 +25,13 @@ public:
     }
 
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
-        set<vector<int>> ans;
+        vector<vector<int>> ans;
         vector<int>temp;
         sort(candidates.begin(), candidates.end());
 
         findCombination(0, ans, temp, candidates, target);
 
-        vector<vector<int>>fin;
-        for(auto it : ans)
-            fin.push_back(it);
-        return fin;
+        
+        return ans;
     }
 };
