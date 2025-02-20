@@ -17,6 +17,7 @@ public:
         findCombination(i+1, ans, temp, candidates, target - candidates[i]);
         temp.pop_back();
 
+        //remove duplicates so that it will form distinct ans only
         while (i + 1 < candidates.size() && candidates[i] == candidates[i + 1])
             i++;
 
