@@ -26,8 +26,8 @@ public:
             return;
         }
 
-        recur(root->left, ans, sum);
         recur(root->right, ans, sum);
+        recur(root->left, ans, sum);
     }
 
     int sumNumbers(TreeNode* root) {
