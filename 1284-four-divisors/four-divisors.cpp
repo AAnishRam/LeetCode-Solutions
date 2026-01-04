@@ -2,13 +2,11 @@ class Solution {
 public:
 
     int divisors(int num) {
-        int val = num;
-        int sum = 0;
-        int count = 1;
-        num /= 2;
+        int val = num, sum = 0, count = 1;
         sum += val;
-        for(int i=1; i<=num; i++) {
-            if(val % i == 0)
+        val /= 2;
+        for(int i=1; i<=val; i++) {
+            if(num % i == 0)
             {
                 count++;
                 sum += i;
