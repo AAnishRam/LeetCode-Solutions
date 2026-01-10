@@ -1,6 +1,7 @@
 class Solution {
 public:
-
+    
+    //top down
     int solve(int i, int j, string s1, string s2, vector<vector<int>> &dp) {
         if(i == s1.length()) {
             int sum = 0;
