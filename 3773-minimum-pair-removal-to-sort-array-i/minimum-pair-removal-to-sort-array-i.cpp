@@ -1,26 +1,33 @@
 class Solution {
 public:
-    int minPair(vector<int> v){
-        int minSum = 1e9;
-        int pos = -1;
-        for(int i = 0; i < (int)v.size() - 1; i ++){
-            if(v[i] + v[i + 1] < minSum){
-                minSum = v[i] + v[i + 1];
-                pos = i;
-            }
-        }
-        return pos;
-    }
-    void mergePair(vector<int> &v, int pos){
-        v[pos] += v[pos + 1];
-        v.erase(v.begin() + pos + 1);
-    }
     int minimumPairRemoval(vector<int>& nums) {
-        int ops = 0;
-        while(!is_sorted(nums.begin(), nums.end())){
-            mergePair(nums, minPair(nums));
-            ops += 1;
+        int count = 0;
+        bool flag = true;
+
+        while(flag) {
+            if(nums.size() < 2)
+                return count;
+            int first = -1;
+            int second = -1;
+            int mini = INT_MAX;
+            bool orderCheck = true;
+            for(int i=0; i<nums.size() - 1; i++) {
+                if(nums[i] + nums[i+1] < mini) {
+                    mini = nums[i] + nums[i+1];
+                    first = i;
+                    second = i+1;
+                }
+                if(nums[i] > nums[i + 1]) orderCheck = false;
+            }
+            if(orderCheck)
+            { 
+                return count;
+            }
+            nums[first] = nums[first] + nums[second];
+            nums.erase(nums.begin() + second);
+            count++;
         }
-        return ops;
+        return count;
+        
     }
 };
